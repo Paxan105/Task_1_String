@@ -16,30 +16,11 @@ public class Main {
         System.out.print("Введите длину слов которые необходимо заменить: ");
         number=scanner.nextInt();
 
-        int start,end;
-        start =0;
+        scanner.close();
 
-        
-        while (stringBuffer.indexOf(" ",start)!=-1){
-            if (stringBuffer.indexOf(" ",start)!=-1){
-             end = stringBuffer.indexOf(" ",start);
-                if(end-start==number){
-                //    Производим замену
-                    Sentence.replace(stringBuffer,start,end);
-                    start += Word.getWord().length();
-                } else start = end+1 ;
-            }
-        }
+        Sentence.replace(stringBuffer,number);
 
-        if (stringBuffer.indexOf(" ",start)==-1){
-            end = stringBuffer.length();
-            if(stringBuffer.length()-start == number){
-               //   Производим замену
-                Sentence.replace(stringBuffer,start,end);
-            }
-        }
         System.out.println("Результат: " + stringBuffer);
-
 
 
 
