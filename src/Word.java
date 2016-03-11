@@ -3,13 +3,27 @@
  */
 public class Word {
 
-    public static String Word;
+    private String word;
 
-    public static String getWord() {
-        return Word;
+    private int length;
+
+
+    public Word(String word) {
+        this.word = word;
+        this.length = word.length();
     }
 
-    public static void setWord(String word) {
-        Word = word;
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+        length = word.length();
     }
 }
