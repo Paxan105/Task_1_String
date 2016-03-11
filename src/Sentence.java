@@ -5,26 +5,16 @@ import java.util.ArrayList;
 
 public class Sentence {
 
-       private ArrayList<Word> wordList = new ArrayList<Word>();
+    private ArrayList<Word> wordList = new ArrayList<Word>();
+    String text;
 
-    public Sentence(String text) {
 
-        getWords(text);
-
-    }
-
-    public void getWords(String text) {
-        int start=0,end;
-
-        while (text.indexOf(" ",start)!=-1) {
-
-            end=text.indexOf(" ",start);
-            wordList.add(new Word(text.substring(start,end)));
-            start=end+1;
+    public Sentence(String text,String separator) {
+        this.text = text;
+        for (String string : text.split(separator)){
+            wordList.add(new Word(string));
         }
-        end = text.length();
-        System.out.println(text.substring(start,end));
-        wordList.add(new Word(text.substring(start,end)));
+
     }
 
     public void replace(String replaceString, int number){
@@ -37,11 +27,14 @@ public class Sentence {
 
     @Override
     public String toString() {
-        String str="";
-        for (Word word : wordList) {
-            str=str+word.getWord()+" ";
+        if(wordList.size()!=0) {
+            String str = "";
+            for (Word word : wordList) {
+                str = str + word.getWord() + " ";
+            }
+            return str;
         }
-        return str;
+        return text;
     }
 
     }
