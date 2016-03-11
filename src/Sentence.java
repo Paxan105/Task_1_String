@@ -19,7 +19,6 @@ public class Sentence {
         while (text.indexOf(" ",start)!=-1) {
 
             end=text.indexOf(" ",start);
-            System.out.println(text.substring(start,end));
             wordList.add(new Word(text.substring(start,end)));
             start=end+1;
         }
