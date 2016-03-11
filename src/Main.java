@@ -20,7 +20,7 @@ public class Main {
 
         sentence.replace(word,number);
 
-        System.out.println(sentence);
+        System.out.println("Результат: "+sentence);
 
 
 
