@@ -7,7 +7,12 @@ public class Main {
          Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите начальный текст: ");
-        Sentence sentence = new Sentence(scanner.nextLine());
+        String text = scanner.nextLine();
+        text=text.trim();
+        System.out.print("Введите символ разделения в предложении: ");
+        String separator =scanner.nextLine();
+
+        Sentence sentence = new Sentence(text,separator);
 
         System.out.print("Введите подстроку для замены: ");
         String word = scanner.nextLine();
